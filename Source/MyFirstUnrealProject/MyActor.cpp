@@ -1,29 +1,29 @@
-// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "MyActor.h"
-
-// Sets default values
-AMyActor::AMyActor()
+					/* 변수 초기화 1 */
+AMyActor::AMyActor() : TotalDamage(10), DamageTimeInSeconds(1.2f)
 {
-	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	UE_LOG(LogTemp, Log, TEXT("Constructor"));
+	/* 변수 초기화 1 */
+	DamagePerSecond = TotalDamage / DamageTimeInSeconds;
+	CharacterName = TEXT("NickName");
+	bAttackable = true;
+
+	//UE_LOG(LogTemp, Log, TEXT("Constructor"));
 }
 
-// Called when the game starts or when spawned
 void AMyActor::BeginPlay()
 {
 	Super::BeginPlay();
 
-	UE_LOG(LogTemp, Log, TEXT("BiginPlay"));
+	//UE_LOG(LogTemp, Log, TEXT("BiginPlay"));
 }
 
-// Called every frame
 void AMyActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	UE_LOG(LogTemp, Log, TEXT("Tick"));
+	//UE_LOG(LogTemp, Log, TEXT("Tick"));
 }
